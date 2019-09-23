@@ -24,25 +24,35 @@
 
 **Важно:** git плохо работает с нашими буквами "й" и "ё",  следует избегать их использования в именах веток.
 
-#### master
+### master
 Основная стабильная ветка. В неё мёржатся ветки релизов после стабилизации.
-#### develop
-Основная ветка разработки. В неё мёржатся ветки фич и багов после тестирования.
-#### features/<feature_id_in_issue_tracker>_<feature_name_in_issue_tracker>
+
+### develop
+Основная ветка разработки. В неё мёржатся ветки фич, рефакторингов и багов после тестирования.
+
+### features/<feature_id_in_issue_tracker>_<feature_name_in_issue_tracker>
+Создаётся под конкретную задачу на разработку фичи в Джире.
+
 Пример: 
 > features/EW_IOS-98_Реализовать_независимую_отправку_и_получение_данных_с_сервера
 
 Создаётся из [develop](#develop), мёржится в [develop](#develop).
 
-После завершения работы над задачей необходимо создать Pull Request из ветки с фичей в ветку develop.
+После завершения работы над задачей необходимо создать Merge Request из ветки с фичей в ветку develop. 
+Ветка мёржится после прохождения Code Review и цикла тестирования.
 
-#### refactoring/<refactoring_name>
+### refactoring/<refactoring_name>
+Создаётся под изменение кода без расширения функциональности.
+
 Создаётся из [develop](#develop), мёржится в [develop](#develop)
 
-#### releases/release-<release_version>
+### releases/release-<release_version>
+В этой ветке стабилизируется версия, которая в итоге будет передана Заказчику. 
+В неё не мёржится только багфикс.
+
 Создаётся из [develop](#develop), мёржится в [develop](#develop) и [master](#master)
 
-#### bugs/<bug_id_in_issue_tracker>_<bug_name_in_issue_tracker>
+### bugs/<bug_id_in_issue_tracker>_<bug_name_in_issue_tracker>
 Создаётся и мёржится из любого типа ветки. Зависит от того, куда необходимо внести исправление. Уточнить у аналитика.
 
 Примеры:
