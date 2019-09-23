@@ -32,15 +32,15 @@
 Пример: 
 > features/EW_IOS-98_Реализовать_независимую_отправку_и_получение_данных_с_сервера
 
-Создаётся из develop, мёржится в develop.
+Создаётся из [develop](#develop), мёржится в [develop](#develop).
 
 После завершения работы над задачей необходимо создать Pull Request из ветки с фичей в ветку develop.
 
 #### refactoring/<refactoring_name>
-Создаётся из develop, мёржится в develop
+Создаётся из [develop](#develop), мёржится в [develop](#develop)
 
 #### releases/release-<release_version>
-Создаётся из develop, мёржится в develop и master
+Создаётся из [develop](#develop), мёржится в [develop](#develop) и [master](#master)
 
 #### bugs/<bug_id_in_issue_tracker>_<bug_name_in_issue_tracker>
 Создаётся и мёржится из любого типа ветки. Зависит от того, куда необходимо внести исправление. Уточнить у аналитика.
