@@ -12,6 +12,7 @@
 * [Архитектура MVP](#Архитектура MVP)
    * [Описание протоколов](## Описание протоколов)
    * [Реализации протоколов](## Реализации протоколов)
+   * [Порядок расположения протоколов](## Порядок расположения протоколов)
 
 # Git-Flow
 ## Работа с коммитами
@@ -174,3 +175,24 @@ class EventListPresenter: EventListPresenterProtocol {}
 **Важно:** За логику layout'а и как именно отображать подготовленные данные отвечает `view`.
 
 **Важно:** При возвращении в `presenter` на главный поток желательно использовать `CFRunLoopPerformBlock(CFRunLoopGetMain(), CFRunLoopMode.defaultMode.rawValue) {}`, где это возможно.
+
+## Порядок расположения протоколов
+
+Описание протоколов выносится на тот же уровень что и Storyboard модуля, в отдельный файл `НазваниеМодуляProtocols`. Протоколы в нём группируются по модулям, `view` рядом с `presenter`, сортировка от основных к вспомогательным.
+
+**Пример:**
+```swift
+protocol MainViewProtocol: AnyObject { }
+protocol MainPresenterProtocol: AnyObject { }
+protocol HeaderProtocol: AnyObject { }
+protocol HeaderPresenterProtocol: AnyObject { }
+protocol CellViewProtocol: AnyObject { }
+protocol CellPresenterProtocol: AnyObject { }
+```
+
+**Важно:** Протоколы делегатов распологаются под протоколами делегирующих.
+
+
+
+
+
